@@ -9,8 +9,8 @@ class ArrayTests {
 	@Test
 	void get_length() {
 		int array_size = 128;
-		Array calculator = new Array(array_size);
-		assertEquals(array_size, calculator.get_length(), "first argument should set array size");
+		Array array = new Array(array_size);
+		assertEquals(array_size, array.get_length(), "first argument should set array size");
 	}
 
 }
