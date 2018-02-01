@@ -56,7 +56,7 @@ public class Array {
 	}
 
 	/**
-	* Insert an item into the end of the array
+	* Insert a value into the next unset array element
 	* 
 	* @param v (required) the value to be inserted
 	* @return true if the value was created, or false if array is full
