@@ -2,7 +2,7 @@ package com.wallyfaye.array;
 
 public class Array {
 
-	public int[] array;
+	private int[] array;
 
 	public Array(int a) {
 		array = new int[a];
