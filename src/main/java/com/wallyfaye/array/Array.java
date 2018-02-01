@@ -28,7 +28,7 @@ public class Array {
 	* @return the size of the array
 	*/
 
-	public int get_length() {
+	public int getLength() {
 		return array.length;
 	}
 
