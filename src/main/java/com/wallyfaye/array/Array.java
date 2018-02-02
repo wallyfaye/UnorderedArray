@@ -46,7 +46,7 @@ public class Array {
 	* @return the value of an item, or 0 if nonexistant
 	*/
 
-	public int get(int i) {
+	public int getValueByIndex(int i) {
 
 		boolean iTooBig = i >= length;
 		boolean iTooSmall = i < 0;
@@ -62,11 +62,14 @@ public class Array {
 	* @return true if the value was created, or false if array is full
 	*/
 
-	public boolean push(int v) {
+	public boolean insertValue(int v) {
 
 		boolean did_insert = false;
 
-		if(insertIndex < length){
+		boolean value_not_zero = v != 0;
+		boolean array_not_full = insertIndex < length;
+
+		if(array_not_full && value_not_zero){
 			array[insertIndex] = v;
 			insertIndex++;
 			did_insert = true;
@@ -76,4 +79,49 @@ public class Array {
 
 	}
 
+	/**
+	* Delete all matching values within the array
+	* 
+	* @param v (required) the value to be deleted
+	* @return true if a value was deleted, or false if nothing changed
+	*/
+
+	public boolean deleteValue(int v) {
+
+		boolean did_delete = false;
+		int zero_count = 0;
+
+		for(int i = 0; i < length; i++){
+			if(array[i] == 0){
+				zero_count++;
+			} else if(array[i] == v){
+				array[i] = 0;
+				did_delete = true;
+				zero_count++;
+			}
+		}
+
+		if(did_delete){
+			int array_indexer = 0;
+			for(int i = 0; i < length; i++){
+				if(array[i] != 0){
+					array[array_indexer] = array[i];
+					array_indexer++;
+				}
+			}
+
+			insertIndex = length - zero_count;
+
+			for(int i = length-1; i >= 0; i--){
+				if(zero_count > 0){
+					array[i] = 0;
+					zero_count--;
+				}
+			}
+
+		}
+
+		return did_delete;
+
+	}
 }
