@@ -7,11 +7,14 @@
 ### new Array(size)
 Create a new array with given size
 >
-### .get(index)
+### .getValueByIndex(index)
 Get value at given index
 >
-### .push(value)
+### .insertValue(value)
 Add a value in the next unset array value
+>
+### .deleteValue(value)
+Remove all matching values from the array and shift elements to beginning of array
 
 ## Tools
 >
