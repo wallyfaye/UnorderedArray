@@ -91,7 +91,9 @@ public class Array {
 		boolean did_delete = false;
 		int zero_count = 0;
 
+		// find matches and count 0s
 		for(int i = 0; i < length; i++){
+
 			if(array[i] == 0){
 				zero_count++;
 			} else if(array[i] == v){
@@ -99,10 +101,14 @@ public class Array {
 				did_delete = true;
 				zero_count++;
 			}
+
 		}
 
+		// if deletion occurred shift items forward
 		if(did_delete){
+
 			int array_indexer = 0;
+
 			for(int i = 0; i < length; i++){
 				if(array[i] != 0){
 					array[array_indexer] = array[i];
@@ -112,11 +118,9 @@ public class Array {
 
 			insertIndex = length - zero_count;
 
-			for(int i = length-1; i >= 0; i--){
-				if(zero_count > 0){
-					array[i] = 0;
-					zero_count--;
-				}
+			while(zero_count > 0){
+				array[length - zero_count] = 0;
+				zero_count--;
 			}
 
 		}
