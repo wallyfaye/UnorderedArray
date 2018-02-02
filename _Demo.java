@@ -1,10 +1,10 @@
-import com.wallyfaye.array.Array;
+import com.wallyfaye.array.UnorderedArray;
 class _Demo {
 
 	public static void main(String[] args){
 
 		int arraySize = 16;
-		Array array = new Array(arraySize);
+		UnorderedArray array = new UnorderedArray(arraySize);
 
 		for(int i = 0; i < arraySize; i++){
 			if(array.insertValue(i * 2)){

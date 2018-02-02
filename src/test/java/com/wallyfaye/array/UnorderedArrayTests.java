@@ -7,18 +7,18 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
-class ArrayTests {
+class UnorderedArrayTests {
 
 	@Test
 	void lengthOfArray() {
 		int length = 128;
-		Array array = new Array(length);
+		UnorderedArray array = new UnorderedArray(length);
 		assertEquals(length, array.length(), "first argument should set array size");
 	}
 
 	@Test
 	void retrieveBadItems(){
-		Array array = new Array(2);
+		UnorderedArray array = new UnorderedArray(2);
 		assertEquals(0, array.getValueByIndex(0), "nonexistent values should return -1");
 		assertEquals(0, array.getValueByIndex(3), "nonexistent values should return -1");
 		assertEquals(0, array.getValueByIndex(-1), "nonexistent values should return -1");
@@ -28,7 +28,7 @@ class ArrayTests {
 	@Test
 	void insertAndRetrieveItems(){
 
-		Array array = new Array(2);
+		UnorderedArray array = new UnorderedArray(2);
 
 		int firstItem = 123;
 		int secondItem = 456;
@@ -57,7 +57,7 @@ class ArrayTests {
 	@Test
 	void deleteItemsAndInsert(){
 
-		Array array_1 = new Array(10);
+		UnorderedArray array_1 = new UnorderedArray(10);
 
 		array_1.insertValue(9);
 		array_1.insertValue(8);
@@ -88,7 +88,7 @@ class ArrayTests {
 			() -> assertEquals(0, array_1.getValueByIndex(9), "array element at index 9 should equal 0")
 		);
 
-		Array array_2 = new Array(4);
+		UnorderedArray array_2 = new UnorderedArray(4);
 		array_2.insertValue(1);
 		array_2.insertValue(2);
 		array_2.insertValue(3);

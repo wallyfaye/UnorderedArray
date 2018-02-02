@@ -8,7 +8,7 @@ package com.wallyfaye.array;
  * @version 1.0
 */
 
-public class Array {
+public class UnorderedArray {
 
 	private int[] array;
 	private int insertIndex = 0;
@@ -20,7 +20,7 @@ public class Array {
 	* @param s (required) the desired size of the array
 	*/
 
-	public Array(int s) {
+	public UnorderedArray(int s) {
 
 		array = new int[s];
 		length = array.length;
